@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Globe Gradients -->
+    <radialGradient id="globeGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="45%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </radialGradient>
+    <linearGradient id="redSwoosh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+    <linearGradient id="navySwoosh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0b1b32" />
+    </linearGradient>
+    <linearGradient id="penMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0b1329" />
+    </linearGradient>
+    <!-- Filter for subtle crispness -->
+    <filter id="subtleShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- LOGO EMBLEM GROUP (Left side: Globe + Crescent Swooshes + Fountain Pen) -->
+  <g transform="translate(20, 10)">
+    <!-- Red Crescent Outer Swoosh -->
+    <path d="M 125,25 C 65,22 18,72 22,145 C 24,180 45,215 75,235 C 50,210 38,175 40,140 C 42,85 85,45 135,42 C 160,40 185,48 202,62 C 182,40 155,26 125,25 Z" fill="url(#redSwoosh)" />
+
+    <!-- Navy Bottom-Left Crescent Arc -->
+    <path d="M 40,140 C 35,178 52,218 85,242 C 120,266 170,264 205,240 C 165,255 118,245 90,220 C 65,198 52,168 56,135 Z" fill="url(#navySwoosh)" />
+
+    <!-- Blue Globe Sphere -->
+    <circle cx="125" cy="140" r="62" fill="url(#globeGrad)" />
+
+    <!-- Stylized White Continents on Globe -->
+    <!-- North America / Europe -->
+    <path d="M 85,115 C 88,105 100,100 112,104 C 118,106 124,100 130,95 C 136,92 145,96 142,104 C 140,110 132,112 128,118 C 125,122 118,124 115,130 C 110,135 98,136 94,128 C 90,122 83,120 85,115 Z" fill="#ffffff" opacity="0.95" />
+    <!-- Asia / Subcontinent -->
+    <path d="M 132,108 C 138,102 152,104 158,110 C 165,116 168,128 162,136 C 158,142 148,144 142,138 C 138,134 135,124 132,118 Z" fill="#ffffff" opacity="0.95" />
+    <!-- Africa -->
+    <path d="M 115,135 C 122,132 130,136 132,142 C 135,152 132,162 126,170 C 120,178 112,176 110,166 C 108,158 110,148 112,140 Z" fill="#ffffff" opacity="0.95" />
+    <!-- Australia / Islands -->
+    <ellipse cx="165" cy="158" rx="8" ry="6" fill="#ffffff" opacity="0.92" />
+    <circle cx="150" cy="168" r="4" fill="#ffffff" opacity="0.9" />
+
+    <!-- Latitude / Longitude subtle curved lines -->
+    <ellipse cx="125" cy="140" rx="62" ry="24" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.3" />
+    <ellipse cx="125" cy="140" rx="30" ry="62" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.3" />
+
+    <!-- Fountain Pen Nib (Emerging pointing towards top-right at ~45 deg) -->
+    <g transform="translate(145, 125) rotate(-38)">
+      <!-- Pen Body Base -->
+      <path d="M -16,42 L 16,42 L 14,80 L -14,80 Z" fill="url(#navySwoosh)" />
+      <!-- Silver Collar Band -->
+      <rect x="-15" y="36" width="30" height="6" rx="1.5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5" />
+      
+      <!-- Pen Nib Body -->
+      <path d="M -16,36 C -16,22 -14,6 0,-24 C 14,6 16,22 16,36 Z" fill="url(#penMetallic)" stroke="#0f172a" stroke-width="1" />
+      
+      <!-- Pen Nib Decorative Engraving & Inset -->
+      <path d="M -10,34 C -10,24 -8,12 0,-10 C 8,12 10,24 10,34 Z" fill="none" stroke="#f8fafc" stroke-width="1.2" opacity="0.8" />
+      
+      <!-- Breather Hole -->
+      <circle cx="0" cy="6" r="3.2" fill="#ffffff" />
+      <!-- Nib Slit line to tip -->
+      <line x1="0" y1="6" x2="0" y2="-24" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+      <!-- Slit line downwards into body -->
+      <line x1="0" y1="9" x2="0" y2="28" stroke="#ffffff" stroke-width="1" opacity="0.6" />
+    </g>
+  </g>
+
+  <!-- BRAND TYPOGRAPHY: হাজরাবাড়ী ২৪.কম -->
+  <g transform="translate(265, 168)" filter="url(#subtleShadow)">
+    <text font-family="'Noto Serif Bengali', 'Hind Siliguri', serif" font-weight="900" font-size="124" letter-spacing="-2">
+      <!-- 'হাজরাবাড়ী' in Deep Navy -->
+      <tspan fill="#0b1b32">হাজরাবাড়ী</tspan>
+      <!-- Space -->
+      <tspan fill="#0b1b32" font-size="60"> </tspan>
+      <!-- '২৪' in Newspaper Red -->
+      <tspan fill="#dc2626" font-weight="900">২৪</tspan>
+      <!-- '.কম' in Deep Navy -->
+      <tspan fill="#0b1b32">.কম</tspan>
+    </text>
+  </g>
+
+  <!-- SUB-HEADER / SLOGAN BAR -->
+  <!-- Left Red Accent Line -->
+  <line x1="210" y1="214" x2="285" y2="214" stroke="#dc2626" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Subtitle Text: ONLINE NEWS PORTAL -->
+  <text x="300" y="222" font-family="'Hind Siliguri', -apple-system, sans-serif" font-weight="800" font-size="24.5" fill="#0b1b32" letter-spacing="4.5">
+    ONLINE NEWS PORTAL
+  </text>
+
+  <!-- Red Diamond Separator -->
+  <g transform="translate(605, 214)">
+    <polygon points="0,-9 9,0 0,9 -9,0" fill="#dc2626" />
+  </g>
+
+  <!-- Bengali Tagline: সত্যের পথে, সংবাদের সাথে -->
+  <text x="630" y="222" font-family="'Noto Serif Bengali', 'Hind Siliguri', serif" font-weight="700" font-style="italic" font-size="28" fill="#0f172a" letter-spacing="0.5">
+    সত্যের পথে, সংবাদের সাথে
+  </text>
+
+  <!-- Right Red Accent Line -->
+  <line x1="935" y1="214" x2="985" y2="214" stroke="#dc2626" stroke-width="4.5" stroke-linecap="round" />
+</svg>

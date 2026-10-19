@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email.lower() == 'ibrahimsm652@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Connectivity test document
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+
+    // Authorized Admins collection - only designated admin can write
+    match /admins/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && (
+        request.auth.token.email.lower() == 'ibrahimsm652@gmail.com' ||
+        request.auth.uid == userId
+      );
+    }
+
+    // Published and draft news articles: public read for readers; authenticated newsroom staff can create, update, delete
+    match /articles/{articleId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+
+      // Comments on articles: public read, validated submission & likes
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create: if request.resource.data.authorName is string 
+                      && request.resource.data.commentText is string 
+                      && request.resource.data.commentText.size() <= 2000;
+        allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes']);
+        allow delete: if isAuthenticated();
+      }
+    }
+
+    // Breaking news tickers
+    match /breakingNews/{itemId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Media library assets
+    match /media/{mediaId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Public site configuration
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Contact tips and reader submissions
+    match /contactSubmissions/{submissionId} {
+      allow create: if request.resource.data.name is string 
+                    && request.resource.data.message is string 
+                    && request.resource.data.message.size() <= 5000;
+      allow read, update, delete: if isAuthenticated();
+    }
+  }
+}

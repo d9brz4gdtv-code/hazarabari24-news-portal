@@ -1,0 +1,127 @@
+{
+  "entities": {
+    "Article": {
+      "title": "Article",
+      "description": "A news article published on Hazarabari 24",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "summary": { "type": "string" },
+        "category": { "type": "string" },
+        "categorySlug": { "type": "string" },
+        "publishedAt": { "type": "string" },
+        "status": { "type": "string", "enum": ["draft", "published", "scheduled"] },
+        "coverImage": { "type": "string" },
+        "viewCount": { "type": "number" }
+      },
+      "required": ["id", "title", "summary", "category", "status", "publishedAt"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "Reader comment on an article",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "articleId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "commentText": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "likes": { "type": "number" }
+      },
+      "required": ["id", "articleId", "authorName", "commentText"]
+    },
+    "ContactSubmission": {
+      "title": "ContactSubmission",
+      "description": "News tip or reader submission to the editorial desk",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      },
+      "required": ["name", "message", "submittedAt"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Authorized newsroom administrator and editor profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["superadmin", "editor", "reporter"] }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "BreakingNews": {
+      "title": "BreakingNews",
+      "description": "Live breaking headline item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "headline": { "type": "string" },
+        "active": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "headline", "active"]
+    },
+    "MediaItem": {
+      "title": "MediaItem",
+      "description": "Uploaded news photography asset in Cloud Storage",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "url": { "type": "string" },
+        "size": { "type": "number" },
+        "type": { "type": "string" },
+        "uploadedAt": { "type": "string" }
+      },
+      "required": ["id", "url", "uploadedAt"]
+    },
+    "SiteSettings": {
+      "title": "SiteSettings",
+      "description": "Public editorial contact and site configuration",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "siteNameBn": { "type": "string" },
+        "tagline": { "type": "string" }
+      },
+      "required": ["id", "siteNameBn"]
+    }
+  },
+  "firestore": {
+    "/articles/{articleId}": {
+      "schema": "Article",
+      "description": "Collection of published and draft news stories"
+    },
+    "/articles/{articleId}/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Reader comments on a news story"
+    },
+    "/admins/{userId}": {
+      "schema": "Admin",
+      "description": "Authorized editorial administrators"
+    },
+    "/breakingNews/{itemId}": {
+      "schema": "BreakingNews",
+      "description": "Breaking news tickers"
+    },
+    "/media/{mediaId}": {
+      "schema": "MediaItem",
+      "description": "Newsroom media library assets"
+    },
+    "/settings/{settingId}": {
+      "schema": "SiteSettings",
+      "description": "Site global settings"
+    },
+    "/contactSubmissions/{submissionId}": {
+      "schema": "ContactSubmission",
+      "description": "Inquiries and news tips submitted by readers"
+    }
+  }
+}

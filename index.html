@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>হাজরাবাড়ী ২৪. কম - Hazarabari 24</title>
+    <meta name="description" content="হাজরাবাড়ী ২৪. কম (Hazarabari 24) — সত্যের পথে, সংবাদের সাথে। জাতীয়, রাজনীতি, অর্থনীতি, খেলাধুলা, আন্তর্জাতিক ও সারাদেশের নির্ভরযোগ্য সংবাদমাধ্যম।" />
+
+    <!-- OpenGraph / Facebook / WhatsApp (Large Preview Card) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="হাজরাবাড়ী ২৪. কম" />
+    <meta property="og:locale" content="bn_BD" />
+    <meta property="og:title" content="হাজরাবাড়ী ২৪. কম - Hazarabari 24" />
+    <meta property="og:description" content="হাজরাবাড়ী ২৪. কম (Hazarabari 24) — সত্যের পথে, সংবাদের সাথে। জাতীয়, রাজনীতি, অর্থনীতি, খেলাধুলা, আন্তর্জাতিক ও সারাদেশের নির্ভরযোগ্য সংবাদমাধ্যম।" />
+    <meta property="og:url" content="https://hazarabari24.com" />
+    <meta property="og:image" content="/images/og-image.png" />
+    <meta property="og:image:secure_url" content="/images/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="হাজরাবাড়ী ২৪. কম - অফিসিয়াল লোগো" />
+
+    <!-- Twitter / X Cards (summary_large_image for big banner) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hazarabari24" />
+    <meta name="twitter:creator" content="@hazarabari24" />
+    <meta name="twitter:title" content="হাজরাবাড়ী ২৪. কম - Hazarabari 24" />
+    <meta name="twitter:description" content="হাজরাবাড়ী ২৪. কম — সত্যের পথে, সংবাদের সাথে। জাতীয়, রাজনীতি, অর্থনীতি ও সারাদেশের খবর।" />
+    <meta name="twitter:image" content="/images/og-image.png" />
+    <meta name="twitter:image:alt" content="হাজরাবাড়ী ২৪. কম লোগো" />
+
+    <!-- Absolute URL Sync Script for Social Media Crawlers -->
+    <script>
+      (function() {
+        try {
+          if (typeof window !== 'undefined' && window.location) {
+            var origin = window.location.origin;
+            var bannerUrl = origin + '/images/og-image.png';
+            var ogImg = document.querySelector('meta[property="og:image"]');
+            var ogImgSec = document.querySelector('meta[property="og:image:secure_url"]');
+            var twImg = document.querySelector('meta[name="twitter:image"]');
+            var ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogImg) ogImg.setAttribute('content', bannerUrl);
+            if (ogImgSec) ogImgSec.setAttribute('content', bannerUrl);
+            if (twImg) twImg.setAttribute('content', bannerUrl);
+            if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+          }
+        } catch(e) {}
+      })();
+    </script>
+
+    <meta name="theme-color" content="#dc2626" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <meta name="google-site-verification" content="85O1Xh8fdNFBo7RzDugLvFjr-Z47BfMCm8odNrhR0qY" />
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+
+    <!-- Google Fonts for Bengali Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org NewsMediaOrganization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsMediaOrganization",
+        "name": "হাজরাবাড়ী ২৪. কম",
+        "alternateName": "Hazarabari 24",
+        "slogan": "সত্যের পথে, সংবাদের সাথে",
+        "url": "https://hazarabari24.com",
+        "logo": "https://hazarabari24.com/images/og-image.png",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Hazrabari, Melandah, Jamalpur, Bangladesh"
+        },
+        "publishingPrinciples": "https://hazarabari24.com/editorial-policy"
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased selection:bg-red-600 selection:text-white min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

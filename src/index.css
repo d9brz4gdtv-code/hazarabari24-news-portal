@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Noto Serif Bengali', Georgia, serif;
+    --font-sans: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-headline {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+.font-serif-bn {
+  font-family: 'Noto Serif Bengali', Georgia, serif;
+}
+
+.font-sans-bn {
+  font-family: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom scrollbar for horizontal sub-navs & tickers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print view optimization */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* Electric Glow & Border Animations */
+@keyframes electric-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.7), 0 0 30px rgba(14, 165, 233, 0.5), inset 0 0 15px rgba(56, 189, 248, 0.3);
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.8));
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 1), 0 0 45px rgba(99, 102, 241, 0.8), 0 0 60px rgba(6, 182, 212, 0.6), inset 0 0 20px rgba(56, 189, 248, 0.6);
+    filter: drop-shadow(0 0 14px rgba(6, 182, 212, 1));
+  }
+}
+
+@keyframes electric-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.electric-border-box {
+  position: relative;
+  border-radius: 1.25rem;
+  padding: 3px;
+  background: linear-gradient(90deg, #00f2fe, #4facfe, #00c6ff, #38bdf8, #818cf8, #00f2fe);
+  background-size: 300% 300%;
+  animation: electric-gradient 3s ease infinite, electric-pulse 2s ease-in-out infinite;
+}
+
+.electric-glow-text {
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.9), 0 0 24px rgba(14, 165, 233, 0.6);
+}

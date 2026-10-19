@@ -1,0 +1,6 @@
+{
+  "name": "হাজরাবাড়ী ২৪. কম - Hazarabari 24",
+  "description": "হাজরাবাড়ী ২৪. কম (Hazarabari 24) — সত্যের পথে, সংবাদের সাথে। জাতীয়, রাজনীতি, অর্থনীতি, খেলাধুলা, আন্তর্জাতিক ও সারাদেশের নির্ভরযোগ্য সংবাদমাধ্যম।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
